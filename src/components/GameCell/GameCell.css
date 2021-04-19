@@ -1,0 +1,13 @@
+.game-cell {
+    padding: 20px;
+    width: 5px;
+    height: 5px;
+    border: 1px solid;
+    cursor: pointer;
+}
+.active-cell {
+    background: rgb(70, 167, 238);
+}
+.disabled-cell {
+    background: white;
+}

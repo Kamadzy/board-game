@@ -1,0 +1,7 @@
+.header-comp {
+    display: grid;
+    height: 100px;
+    margin-top: 50px;
+    grid-template: repeat(1, 100px) / repeat(2, 200px);
+    justify-content: center;
+}
