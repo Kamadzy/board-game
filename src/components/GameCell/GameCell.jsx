@@ -16,7 +16,7 @@ export const GameCell = ({ id, handleClick }) => {
                 id={id}
                 className={`game-cell ${actCell}`}
                 onClick={handleActiveCell}
-            ></div>
+            > </div>
         </div>
     );
 };

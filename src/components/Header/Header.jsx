@@ -42,7 +42,7 @@ const Header = () => {
                     aria-labelledby='dropdownMenuButton'
                 >
                     {newArr.map((el, index) => (
-                        <a className='dropdown-item' key={index}>
+                        <a className='dropdown-item' key={index} onClick={() => handleBoardChange(el.field)}>
                             {el.name}
                         </a>
                     ))}
@@ -52,7 +52,6 @@ const Header = () => {
                 <button
                     type='button'
                     className='btn btn-primary'
-                    // onClick={() => handleBoardChange(value.field)}
                 >
                     START
                 </button>

@@ -8,11 +8,10 @@ export const GameTable = () => {
     const [logCell, setLogCell] = useState([]);
     const [board, setBoard] = useState([]);
 
-    const boardSize = useSelector((state) => state.boardSize);
+    const {size} = useSelector((state) => state.boardSize);
 
     const createBoard = (size) => {
         let arr = new Array(size);
-        console.log(size, 'size');
         for (let i = 0; i < arr.length; i++) {
             arr[i] = [];
         }
@@ -26,14 +25,12 @@ export const GameTable = () => {
     };
 
     useEffect(() => {
-        console.log('useEff');
-        setBoard(createBoard(boardSize.size));
+        setBoard(createBoard(size));
     }, []);
 
     useEffect(() => {
-        console.log('123');
-        setBoard(createBoard(boardSize.size));
-    }, [boardSize]);
+        setBoard(createBoard(size));
+    }, [size]);
 
     const handleClick = (cell) => {
         let logArr = cell.split('.');
