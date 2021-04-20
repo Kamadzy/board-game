@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../../store/actions/fetchData';
-import boardSize from '../../store/actions/boardSize';
+import { fetchData } from '../../store/data/dataActions';
+import boardSize from '../../store/board/boardSizeActions';
 import './Header.css';
 
 const Header = () => {
     const [sizeChose, setSizeChose] = useState('');
     const data = useSelector((state) => state.data);
-
     const dispatch = useDispatch();
 
     const newArr = [];
@@ -28,7 +27,7 @@ const Header = () => {
 
     useEffect(() => {
         dispatch(fetchData());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className='header-comp'>

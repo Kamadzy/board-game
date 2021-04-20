@@ -1,4 +1,4 @@
-import { CHANGE_BOARD_SIZE } from '../actions/boardSize';
+import { CHANGE_BOARD_SIZE } from './boardSizeActions';
 const initialState = {
     size: 5,
 };

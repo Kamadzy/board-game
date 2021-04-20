@@ -1,4 +1,4 @@
-import { FETCH_DATA } from '../actions/fetchData';
+import { FETCH_DATA } from './dataActions';
 
 const initialState = {
     data: [],

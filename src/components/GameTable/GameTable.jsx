@@ -7,7 +7,6 @@ import './GameTable.css';
 export const GameTable = () => {
     const [logCell, setLogCell] = useState([]);
     const [board, setBoard] = useState([]);
-
     const { size } = useSelector((state) => state.boardSize);
 
     const createBoard = (size) => {
@@ -23,10 +22,6 @@ export const GameTable = () => {
         }
         return arr;
     };
-
-    useEffect(() => {
-        setBoard(createBoard(size));
-    }, []);
 
     useEffect(() => {
         setBoard(createBoard(size));
@@ -50,7 +45,7 @@ export const GameTable = () => {
 
     return (
         <div className='gameTable'>
-            <div>
+            <div className='column'>
                 {board.map((row, index) => (
                     <div className='row' key={index}>
                         {row.map((column, index) => (
@@ -63,9 +58,9 @@ export const GameTable = () => {
                     </div>
                 ))}
             </div>
-            <div className='log'>
+            <div className='overflow-auto log'>
                 {logCell.map((el) => (
-                    <div className=' overflow-scroll log-area' key={el.id}>
+                    <div className='log-area' key={el.id}>
                         <span>row: {el.row} </span>
                         <span>col: {el.column}</span>
                     </div>

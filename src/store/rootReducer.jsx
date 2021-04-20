@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import dataReducer from './dataReducer';
-import boardSizeReducer from './boardSizeReducer';
+import dataReducer from './data/dataReducer';
+import boardSizeReducer from './board/boardSizeReducer';
 
 const rootReducer = combineReducers({
     data: dataReducer,
