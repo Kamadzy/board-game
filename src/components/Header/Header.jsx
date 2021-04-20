@@ -5,7 +5,9 @@ import boardSize from '../../store/actions/boardSize';
 import './Header.css';
 
 const Header = () => {
+    const [sizeChose, setSizeChose] = useState('');
     const data = useSelector((state) => state.data);
+
     const dispatch = useDispatch();
 
     const newArr = [];
@@ -17,7 +19,11 @@ const Header = () => {
     dataTransform();
 
     const handleBoardChange = (value) => {
-        dispatch(boardSize(value));
+        setSizeChose(value);
+    };
+
+    const handleBoardChose = () => {
+        dispatch(boardSize(sizeChose));
     };
 
     useEffect(() => {
@@ -42,7 +48,12 @@ const Header = () => {
                     aria-labelledby='dropdownMenuButton'
                 >
                     {newArr.map((el, index) => (
-                        <a className='dropdown-item' key={index} onClick={() => handleBoardChange(el.field)}>
+                        <a
+                            className='dropdown-item'
+                            href='/#'
+                            key={index}
+                            onClick={() => handleBoardChange(el.field)}
+                        >
                             {el.name}
                         </a>
                     ))}
@@ -52,6 +63,7 @@ const Header = () => {
                 <button
                     type='button'
                     className='btn btn-primary'
+                    onClick={handleBoardChose}
                 >
                     START
                 </button>

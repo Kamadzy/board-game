@@ -15,8 +15,8 @@ export const GameCell = ({ id, handleClick }) => {
             <div
                 id={id}
                 className={`game-cell ${actCell}`}
-                onClick={handleActiveCell}
-            > </div>
+                onMouseOver={handleActiveCell}
+            ></div>
         </div>
     );
 };

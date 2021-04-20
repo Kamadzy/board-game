@@ -8,7 +8,7 @@ export const GameTable = () => {
     const [logCell, setLogCell] = useState([]);
     const [board, setBoard] = useState([]);
 
-    const {size} = useSelector((state) => state.boardSize);
+    const { size } = useSelector((state) => state.boardSize);
 
     const createBoard = (size) => {
         let arr = new Array(size);
@@ -39,7 +39,13 @@ export const GameTable = () => {
             row: logArr[0],
             column: logArr[1],
         };
-        setLogCell([...logCell, cellCord]);
+        toggleArrayItem(logCell, cellCord);
+    };
+
+    const toggleArrayItem = (arr, item) => {
+        arr.some((el) => el.id === item.id)
+            ? setLogCell(arr.filter((el) => el.id !== item.id))
+            : setLogCell([...arr, item]);
     };
 
     return (
@@ -59,7 +65,7 @@ export const GameTable = () => {
             </div>
             <div className='log'>
                 {logCell.map((el) => (
-                    <div className='log-area' key={el.id}>
+                    <div className=' overflow-scroll log-area' key={el.id}>
                         <span>row: {el.row} </span>
                         <span>col: {el.column}</span>
                     </div>
